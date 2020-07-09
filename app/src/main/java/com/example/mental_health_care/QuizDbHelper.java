@@ -37,6 +37,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
     //퀴즈들을 여기다가 추가
+    //These question is from : https://www.psycom.net/depression-test/
     private void fillQuestionTable() {
         Question q1 = new Question("Feeling tired or having little energy", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q1);

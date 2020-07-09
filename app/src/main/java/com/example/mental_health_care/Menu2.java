@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +21,16 @@ public class Menu2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startQuiz();
+            }
+
+        });
+
+        ImageButton buttonGoBack = findViewById(R.id.go_back);
+        buttonGoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent back = new Intent(Menu2.this,MainActivity.class);
+                startActivity(back);
             }
 
         });
