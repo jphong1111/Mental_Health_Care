@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         //How Button2 works
         Button Sub2_Button = (Button) findViewById(R.id.button2);
-        Sub1_Button.setOnClickListener(new View.OnClickListener() {
+        Sub2_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Move to next Sub2Activity (Screen Transition)
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         //How Button3 works
         Button Sub3_Button = (Button) findViewById(R.id.button3);
-        Sub1_Button.setOnClickListener(new View.OnClickListener() {
+        Sub3_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Move to next Sub3Activity (Screen Transition)
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         //How Button4 works
         Button Sub4_Button = (Button) findViewById(R.id.button4);
-        Sub1_Button.setOnClickListener(new View.OnClickListener() {
+        Sub4_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Move to next Sub4Activity (Screen Transition)
