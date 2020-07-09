@@ -9,7 +9,7 @@ import com.example.mental_health_care.QuizContract.*;
 import java.util.ArrayList;
 import java.util.List;
 public class QuizDbHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "MyAwesomeQuiz.db";
+    private static final String DATABASE_NAME = "FinalQuiz.db";
     private static final int DATABASE_VERSION = 1;
     private SQLiteDatabase db;
     public QuizDbHelper(Context context) {
@@ -25,6 +25,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 QuestionTable.COLUMN_OPTION1 + " TEXT, " +
                 QuestionTable.COLUMN_OPTION2 + " TEXT, " +
                 QuestionTable.COLUMN_OPTION3 + " TEXT, " +
+                QuestionTable.COLUMN_OPTION4 + " TEXT, " +
                 QuestionTable.COLUMN_ANSWER_NR + " INTEGER" +
                 ")";
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
@@ -35,17 +36,22 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + QuestionTable.TABLE_NAME);
         onCreate(db);
     }
+    //퀴즈들을 여기다가 추가
     private void fillQuestionTable() {
-        Question q1 = new Question("A is correct", "A", "B", "C", 1);
+        Question q1 = new Question("Feeling tired or having little energy", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q1);
-        Question q2 = new Question("B is correct", "A", "B", "C", 2);
+        Question q2 = new Question("Poor appetite or overeating", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q2);
-        Question q3 = new Question("C is correct", "A", "B", "C", 3);
+        Question q3 = new Question("Feeling bad about yourself - or that you are a failure or have let yourself or your family down", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q3);
-        Question q4 = new Question("A is correct again", "A", "B", "C", 1);
+        Question q4 = new Question("Trouble concentrating on things, such as reading the newspaper or watching television", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q4);
-        Question q5 = new Question("B is correct again", "A", "B", "C", 2);
+        Question q5 = new Question("Moving or speaking so slowly that other people could have noticed", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q5);
+        Question q6 = new Question("Thoughts that you would be better off dead, or of hurting yourself", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
+        addQuestion(q6);
+        Question q7 = new Question("If you've had any days with issues above, how difficult have these problems made it for you at work, home, school, or with other people?", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
+        addQuestion(q7);
     }
     private void addQuestion(Question question) {
         ContentValues cv = new ContentValues();
@@ -53,6 +59,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         cv.put(QuestionTable.COLUMN_OPTION1, question.getOption1());
         cv.put(QuestionTable.COLUMN_OPTION2, question.getOption2());
         cv.put(QuestionTable.COLUMN_OPTION3, question.getOption3());
+        cv.put(QuestionTable.COLUMN_OPTION4, question.getOption4());
         cv.put(QuestionTable.COLUMN_ANSWER_NR, question.getAnswerNr());
         db.insert(QuestionTable.TABLE_NAME, null, cv);
     }
@@ -67,6 +74,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
                 question.setOption1(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION1)));
                 question.setOption2(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION2)));
                 question.setOption3(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION3)));
+                question.setOption4(c.getString(c.getColumnIndex(QuestionTable.COLUMN_OPTION4)));
                 question.setAnswerNr(c.getInt(c.getColumnIndex(QuestionTable.COLUMN_ANSWER_NR)));
                 questionList.add(question);
             } while (c.moveToNext());

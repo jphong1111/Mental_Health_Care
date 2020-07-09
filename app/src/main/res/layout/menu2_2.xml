@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    >
+
+
+    <TextView
+
+        android:id="@+id/test_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Here will show the result\nHere will show the result\nHere will show the result"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
+
+        />
+    <Button
+        android:id="@+id/go_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_below="@id/test_result"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
