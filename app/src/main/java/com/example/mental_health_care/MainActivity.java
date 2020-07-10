@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Move to next Sub4Activity (Screen Transition)
-                Intent move_main_sub4 = new Intent(MainActivity.this,Menu4.class);
+                Intent move_main_sub4 = new Intent(MainActivity.this,MapsActivity.class);
                 startActivity(move_main_sub4);
             }
         });

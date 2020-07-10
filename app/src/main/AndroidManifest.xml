@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-       <!-- 맵 작동 오류를 없애준다 앱 버전과 google map 버젼차이의 오류수정-->
+       <!-- 맵 작동 오류를 없애준다 앱 api 버전과 google map 버젼차이의 오류수정-->
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
 
@@ -56,7 +56,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu4">
+        <activity android:name=".MapsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

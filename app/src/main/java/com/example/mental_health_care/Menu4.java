@@ -1,5 +1,7 @@
+/*
 package com.example.mental_health_care;
 
+import android.location.Location;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +17,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 //resource center about location of mental health care
 public class Menu4 extends FragmentActivity implements OnMapReadyCallback {
 
-    GoogleMap mapAPI;
+    GoogleMap mMap;
     SupportMapFragment mapFragment;
 
     @Override
@@ -31,9 +33,13 @@ public class Menu4 extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        mapAPI = googleMap;
+        mMap = googleMap;
         LatLng location1 = new LatLng(19,12);
-        mapAPI.addMarker(new MarkerOptions().position(location1).title("test1"));
-        mapAPI.moveCamera(CameraUpdateFactory.newLatLng(location1));
+        mMap.addMarker(new MarkerOptions().position(location1).title("test1"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(location1));
     }
+
+
+
 }
+*/
