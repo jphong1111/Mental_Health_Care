@@ -34,7 +34,7 @@ public class Menu4 extends FragmentActivity implements OnMapReadyCallback {
     public void centreMapOnLocation(Location location, String title){
 
         LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
-        mMap.clear();
+
         mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
 
@@ -72,10 +72,23 @@ public class Menu4 extends FragmentActivity implements OnMapReadyCallback {
 
         LatLng center1 = new LatLng(32.620892, -85.405405);
         googleMap.addMarker(new MarkerOptions().position(center1).title("East Alabama Mental Health"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(center1));
 
-        LatLng center2 = new LatLng(32.627221, -85.461050);
+        LatLng center2 = new LatLng(32.627270, -85.461105);
         googleMap.addMarker(new MarkerOptions().position(center2).title("Alabama Center for Trauma Therapy"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(center2));
 
+        LatLng center3 = new LatLng(32.589056, -85.326372);
+        googleMap.addMarker(new MarkerOptions().position(center3).title("East Al Mental Health"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(center3));
+
+        LatLng center4 = new LatLng(32.582156, -85.440807);
+        googleMap.addMarker(new MarkerOptions().position(center4).title("Dunn Psychological Services, LLC"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(center4));
+
+        LatLng center5 = new LatLng(32.604700, -85.489834);
+        googleMap.addMarker(new MarkerOptions().position(center5).title("Auburn University Psychological"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(center5));
         Intent intent = getIntent();
 
         if (intent.getIntExtra("Place Number",0) == 0 ){
