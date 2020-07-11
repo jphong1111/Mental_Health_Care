@@ -54,6 +54,12 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         addQuestion(q6);
         Question q7 = new Question("If you've had any days with issues above, how difficult have these problems made it for you at work, home, school, or with other people?", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
         addQuestion(q7);
+        Question q8 = new Question("Little interest or pleasure in doing things", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
+        addQuestion(q8);
+        Question q9 = new Question("Feeling down, depressed, or hopeless", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
+        addQuestion(q9);
+        Question q10 = new Question("Trouble falling or staying asleep, or sleeping too much", "Not at all", "Several days", "More than half the days", "Nearly every day",1);
+        addQuestion(q10);
     }
     private void addQuestion(Question question) {
         ContentValues cv = new ContentValues();

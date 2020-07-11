@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Go Menu"
         android:layout_below="@id/test_result"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         />

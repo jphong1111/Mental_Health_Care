@@ -29,7 +29,7 @@
             >
 
             <Button
-                android:id="@+id/ADHD_Button"
+                android:id="@+id/button1"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -53,7 +53,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Self-Test"
+                android:text="Depression"
                 android:textColor="#464e64"
 
                 android:textSize="20dp" />
@@ -73,7 +73,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Chat"
+                android:text="Panic"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
 
@@ -86,7 +86,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Resource Center"
+                android:text="Dependence"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
         </TableRow>
@@ -104,7 +104,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Chat"
+                android:text="Stress"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
 
@@ -117,7 +117,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Resource Center"
+                android:text="Dementia"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
         </TableRow>
@@ -135,7 +135,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Chat"
+                android:text="Phobia"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
 
@@ -148,7 +148,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/button_color"
-                android:text="Resource Center"
+                android:text="Dysthymia"
                 android:textColor="#464e64"
                 android:textSize="20dp" />
         </TableRow>

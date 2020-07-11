@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#9d596d"
+
+    >
+
+    <TextView
+        android:id="@+id/mental_name"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="name"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/mental_name"
+        android:text="text here"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/symptom"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/description"
+        android:text="Signs and Symptoms"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        />
+
+    <TextView
+        android:id="@+id/description_2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/symptom"
+        android:text="text here"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:text="\n www.stackoverflow.com"
+        android:id="@+id/WebSite_Text"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:autoLink="web"
+        android:layout_below="@id/description_2">
+    </TextView>
 
 </RelativeLayout>

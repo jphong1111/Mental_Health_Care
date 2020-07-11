@@ -19,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
-        android:text="3 - Minutes Depression Test \n\n\n This is a 7 questions test for diagnosing,\nmonitoring, and measuring the severity of depression."
-        android:textSize="20dp"
+        android:text="3 - Minutes Depression Test \n\n\n This is a 10 questions test for diagnosing,\nmonitoring, and measuring the severity of depression."
+        android:textSize="20sp"
 
         >
 
@@ -41,7 +41,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:text="Take Test"
-        android:textSize="20dp"
+        android:textSize="20sp"
         />
 
     <ImageButton
