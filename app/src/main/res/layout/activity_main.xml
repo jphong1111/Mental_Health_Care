@@ -10,10 +10,13 @@
     <!--main mental screen is from: https://today.umd.edu/articles/many-opioid-users-mental-illness-lack-treatment-2669d809-160d-4e88-90ee-665844fbe8f8-->
     <LinearLayout
         android:id="@+id/linearLayout"
+
         android:background="#9d596d"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +29,11 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:fontFamily="@font/font1"
             android:gravity="center"
             android:text="Solian"
-            android:textSize="40dp"
-            android:textColor="#A9A9A9"
+            android:textColor="#141313"
+            android:textSize="50sp"
 
             />
         <TextView

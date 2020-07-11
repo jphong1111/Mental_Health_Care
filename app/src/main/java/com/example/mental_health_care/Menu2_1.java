@@ -18,9 +18,7 @@ import java.util.List;
 //Give information about test
 public class Menu2_1 extends AppCompatActivity {
     private TextView textViewQuestion;
-    private TextView textViewScore;
     private TextView textViewQuestionCount;
-    private TextView textViewCountdown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -31,9 +29,9 @@ public class Menu2_1 extends AppCompatActivity {
     private boolean answered;
     private int questionCounter;
     private Question currentQuestion;
-    private int score;
     private List<Question> questionList;
-    private int count = 1;
+    private int count = 0;
+    public int num = 0;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,12 +61,37 @@ public class Menu2_1 extends AppCompatActivity {
 
 
                    if (!answered) {
-                       if (rb1.isChecked() || rb2.isChecked() || rb3.isChecked() || rb4.isChecked()) {
-                           showNextQuestion();
-                           count++;
-                       } else {
+
+
+                          if(rb1.isChecked()){
+
+                              showNextQuestion();
+                              count++;
+                          } else if(rb2.isChecked()){
+                              num++;
+
+                              showNextQuestion();
+                              count++;
+
+
+                          } else if(rb3.isChecked()){
+                              num = num+2;
+
+                              showNextQuestion();
+                              count++;
+
+
+                          }
+                          else if (rb4.isChecked()) {
+                              num = num + 3;
+
+                              showNextQuestion();
+                              count++;
+
+                          }else {
                            Toast.makeText(Menu2_1.this, "Please select an answer", Toast.LENGTH_SHORT).show();
                        }
+
                    } else {
 
                        showNextQuestion();
@@ -117,4 +140,7 @@ public class Menu2_1 extends AppCompatActivity {
     private void finishQuiz() {
         finish();
     }
+
+
+
 }

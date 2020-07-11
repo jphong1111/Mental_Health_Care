@@ -3,290 +3,157 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#9d596d">
 
-    android:weightSum="10"
-    >
+<TextView
+    android:id="@+id/main_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Mental Illness"
+    android:gravity="center_horizontal"
+    android:textSize="30sp"
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
 
-        >
-
-        <TextView
-            android:id="@+id/mentalTextBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Mental Disorders"
-            android:gravity="center"
-            android:textSize="34sp"
-            android:layout_centerVertical="true"/>
-
-    </RelativeLayout>
-
-    <GridLayout
+    />
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2"
-        android:rowCount="3"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_weight="8"
-        android:padding="8dp">
+        android:layout_gravity="bottom"
+        android:padding="5dp">
 
-        <!--Row 1-->
-        <androidx.cardview.widget.CardView
+        <TableRow
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
+            android:layout_weight="1"
+
             >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+            <Button
+                android:id="@+id/ADHD_Button"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="ADHD"
+                android:textColor="#464e64"
+                android:textSize="20dp"
+                />
 
-                <Button
-                    android:id="@+id/ADHD_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="ADHD" />
 
-            </LinearLayout>
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Self-Test"
+                android:textColor="#464e64"
 
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+                android:textSize="20dp" />
+
+        </TableRow>
+        <TableRow
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
+            android:layout_weight="1"
             >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Chat"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
 
-                <Button
-                    android:id="@+id/Depression_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Depression" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
-        <!--Row 2-->
-        <androidx.cardview.widget.CardView
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Resource Center"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
+        </TableRow>
+        <TableRow
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
+            android:layout_weight="1"
             >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Chat"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
 
-                <Button
-                    android:id="@+id/Panic_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Panic" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Resource Center"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
+        </TableRow>
+        <TableRow
             android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
+            android:layout_weight="1"
             >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Chat"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
 
-                <Button
-                    android:id="@+id/Dependence_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Dependence" />
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/button8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_color"
+                android:text="Resource Center"
+                android:textColor="#464e64"
+                android:textSize="20dp" />
+        </TableRow>
 
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <!--Row 3-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <Button
-                    android:id="@+id/Dementia_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="dementia" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <Button
-                    android:id="@+id/Pobia_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Specific Phobia" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <!--Row 4-->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <Button
-                    android:id="@+id/Dysthymia_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Dysthymia" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight ="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_rowWeight ="1"
-            app.cardElevation ="8dp"
-            app.cardCornerRadius ="8dp"
-            >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                >
-
-                <Button
-                    android:id="@+id/Stress_Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="stress" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </GridLayout>
+    </TableLayout>
 
 
 
