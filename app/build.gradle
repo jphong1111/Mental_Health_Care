@@ -28,4 +28,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.google.android.gms:play-services-location:17.0.0'
+    /*to get api using retrofit library*/
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
 }
