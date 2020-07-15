@@ -60,6 +60,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(move_main_sub4);
             }
         });
+
+        //How COVID_Button works
+        Button Sub5_Button = (Button) findViewById(R.id.covid_button);
+        Sub5_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Move to next Su54Activity (Screen Transition)
+                Intent move_main_sub5 = new Intent(MainActivity.this,COVIDActivity.class);
+                startActivity(move_main_sub5);
+            }
+        });
     }
 
 

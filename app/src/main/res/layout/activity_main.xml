@@ -131,4 +131,12 @@
         </TableLayout>
 
     </LinearLayout>
+    <Button
+        android:id="@+id/covid_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COVID-19"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="300dp"
+        />
 </RelativeLayout>
