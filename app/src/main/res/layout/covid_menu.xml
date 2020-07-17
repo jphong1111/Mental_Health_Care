@@ -1,26 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
 
 
-
-
+    <TextView
+        android:id="@+id/total_positive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Positive"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/text_view_result_positive"
+        android:layout_width="wrap_content"
+        android:layout_height="35sp"
+        android:text=""
+        android:textColor="#FF0000"
+        android:layout_marginLeft="60dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/total_positive"
+        />
 
     <TextView
-        android:id="@+id/text_view_result"
+        android:id="@+id/text_view_result_positive_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="35sp"
+        android:layout_alignBottom="@+id/text_view_result_positive"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@+id/text_view_result_positive"
+        android:text=""
+        android:textColor="#0000FF"
+        android:textSize="30sp" />
+
+    <TextView
+    android:id="@+id/total_death"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/text_view_result_positive"
+    android:text="Total Death"
+    android:textSize="30sp"
+    android:layout_centerHorizontal="true"
+    android:textColor="#000"
+    />
+
+    <TextView
+        android:id="@+id/text_view_result_death"
+        android:layout_width="wrap_content"
+        android:layout_height="35sp"
+        android:text=""
+        android:textColor="#FF0000"
+        android:layout_marginLeft="80dp"
+        android:textSize="30sp"
+        android:layout_below="@+id/total_death"
+        />
+
+    <TextView
+        android:id="@+id/text_view_result_death_increase"
+        android:layout_width="wrap_content"
+        android:layout_height="35sp"
+        android:layout_alignBottom="@+id/text_view_result_death"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@+id/text_view_result_death"
+        android:text=""
+        android:textColor="#0000FF"
+        android:textSize="30sp" />
+<TextView
+    android:id="@+id/data_from"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="This is real time data from :www.covidtracking.com"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentBottom="true"
+    android:autoLink="web"
+    android:textColor="#000"
+    />
+
+    <ImageButton
+        android:id="@+id/covid_to_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="here"
-        android:textColor="#000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</ScrollView>
-
-
-
-
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="go back"
+        android:src="?attr/homeAsUpIndicator" />
+</RelativeLayout>

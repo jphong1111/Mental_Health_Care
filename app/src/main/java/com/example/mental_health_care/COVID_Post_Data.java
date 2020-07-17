@@ -1,5 +1,7 @@
 package com.example.mental_health_care;
 
+import com.google.gson.annotations.SerializedName;
+
 public class COVID_Post_Data {
 
     private String dataChecked;
@@ -7,7 +9,10 @@ public class COVID_Post_Data {
     private int negativeIncrease;
     private int deathIncrease;
     private String state;
+    private int positive;
+    private int death;
 
+    //if the variable is matched with name in json file no need to put @SerializedName here
 
     public String getDataChecked() {
         return dataChecked;
@@ -27,5 +32,13 @@ public class COVID_Post_Data {
 
     public String getState() {
         return state;
+    }
+
+    public int getPositive() {
+        return positive;
+    }
+
+    public int getDeath() {
+        return death;
     }
 }
