@@ -4,18 +4,20 @@ import com.google.gson.annotations.SerializedName;
 
 public class COVID_Post_Data {
 
-    private String dataChecked;
+    private String dateChecked;
     private int positiveIncrease;
     private int negativeIncrease;
     private int deathIncrease;
     private String state;
     private int positive;
     private int death;
+    private int date;
 
     //if the variable is matched with name in json file no need to put @SerializedName here
 
-    public String getDataChecked() {
-        return dataChecked;
+
+    public String getDateChecked() {
+        return dateChecked;
     }
 
     public int getPositiveIncrease() {
@@ -38,7 +40,9 @@ public class COVID_Post_Data {
         return positive;
     }
 
-    public int getDeath() {
-        return death;
+    public int getDeath() { return death; }
+
+    public int getDate() {
+        return date;
     }
 }
