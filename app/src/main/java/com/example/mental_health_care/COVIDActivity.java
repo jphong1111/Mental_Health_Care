@@ -41,6 +41,8 @@ public class COVIDActivity extends AppCompatActivity {
     private TextView scrubInfoTextView;
     private static final String TAG = "COVIDActivity";
 
+    private int [] covid_death;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,8 +107,13 @@ public class COVIDActivity extends AppCompatActivity {
                 //HAVE TO FIX : this code only can show whole result of positive so that it needs to
                 //change to get only one data and set to text
                 //get information about whole infection in US
+                covid_death = new int[300];
+
+                int i = 0;
+
                 for (COVID_Post_Data covid_post_data : posts) {
                     int content1,content2,content3,content4,content5;
+
 
                     content1 = covid_post_data.getPositive();
 /*                    content2 = covid_post_data.getDeath() + "\n";
@@ -115,12 +122,16 @@ public class COVIDActivity extends AppCompatActivity {
                     content5 = " Updated : " + covid_post_data.getDate() + "\n";*/
                     /*Try to put formatted date data BUT FAILED
                     content5 = date.toJson(covid_post_data.getDateChecked());*/
-                    textViewResult.setText(String.valueOf(content1));
+                    covid_death[i] = content1;
+                    i++;
+
+                    textViewResult.setText(String.valueOf(covid_death[0]));
         /*            textViewResult2.append(content2);
                     textViewResult3.append(content3);
                     textViewResult4.append(content4);
                     textViewResult5.append(content5);
 */
+
                 }
 
 
