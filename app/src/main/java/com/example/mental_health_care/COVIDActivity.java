@@ -10,11 +10,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import java.lang.*;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParser;
+import com.robinhood.spark.SparkAdapter;
+import com.robinhood.spark.SparkView;
 
 import org.json.JSONArray;
 
@@ -35,7 +38,7 @@ public class COVIDActivity extends AppCompatActivity {
     private TextView textViewResult3;
     private TextView textViewResult4;
     private TextView textViewResult5;
-
+    private TextView scrubInfoTextView;
     private static final String TAG = "COVIDActivity";
 
     @Override
@@ -103,21 +106,21 @@ public class COVIDActivity extends AppCompatActivity {
                 //change to get only one data and set to text
                 //get information about whole infection in US
                 for (COVID_Post_Data covid_post_data : posts) {
-                    String content1,content2,content3,content4,content5 = "";
+                    int content1,content2,content3,content4,content5;
 
-                    content1 = covid_post_data.getPositive() + "\n";
-                    content2 = covid_post_data.getDeath() + "\n";
+                    content1 = covid_post_data.getPositive();
+/*                    content2 = covid_post_data.getDeath() + "\n";
                     content3 = " (+" + covid_post_data.getPositiveIncrease() + ")\n";
                     content4 = " (+" + covid_post_data.getDeathIncrease() + ")\n";
-                    content5 = " Updated : " + covid_post_data.getDate() + "\n";
+                    content5 = " Updated : " + covid_post_data.getDate() + "\n";*/
                     /*Try to put formatted date data BUT FAILED
                     content5 = date.toJson(covid_post_data.getDateChecked());*/
-                    textViewResult.append(content1);
-                    textViewResult2.append(content2);
+                    textViewResult.setText(String.valueOf(content1));
+        /*            textViewResult2.append(content2);
                     textViewResult3.append(content3);
                     textViewResult4.append(content4);
                     textViewResult5.append(content5);
-
+*/
                 }
 
 
@@ -130,8 +133,59 @@ public class COVIDActivity extends AppCompatActivity {
             public void onFailure(Call<List<COVID_Post_Data>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
             }
+
         });
+
+         scrubInfoTextView = findViewById(R.id.scrub_info_textview);
+        SparkView sparkView = (SparkView) findViewById(R.id.sparkview);
+
+        //create adapter
+        MyAdapter myadapter = new MyAdapter();
+
+        sparkView.setAdapter(myadapter);
+        sparkView.setScrubEnabled(true);
+        sparkView.setScrubListener(new SparkView.OnScrubListener() {
+            @Override
+            public void onScrubbed(Object value) {
+                if (value == null) {
+                    scrubInfoTextView.setText(R.string.scrub_empty);
+                } else {
+                    scrubInfoTextView.setText(getString(R.string.scrub_format, value));
+
+                }
+            }
+        });
+
+
+
+
+
+
+
     }
 
+    public static class MyAdapter extends SparkAdapter {
+        private final float[] yData;
 
+        public MyAdapter() {
+            yData = new float[50];
+
+        }
+
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int index) {
+            return null;
+        }
+
+        @Override
+        public float getY(int index) {
+            return yData[index];
+        }
+    }
 }

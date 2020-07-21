@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="8dp">
 
 
@@ -96,4 +97,28 @@
         android:layout_alignParentTop="true"
         android:contentDescription="go back"
         android:src="?attr/homeAsUpIndicator" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/text_view_result_death"
+        android:layout_above="@id/data_from"
+        tools:context=".COVIDActivity">
+
+        <com.robinhood.spark.SparkView
+            android:id="@+id/sparkview"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+
+            />
+        <TextView
+            android:id="@+id/scrub_info_textview"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:text = "here"
+
+            />
+    </LinearLayout>
 </RelativeLayout>
