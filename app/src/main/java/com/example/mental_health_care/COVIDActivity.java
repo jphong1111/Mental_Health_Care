@@ -1,13 +1,12 @@
 package com.example.mental_health_care;
 
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 import java.lang.*;
 
 import androidx.annotation.NonNull;
@@ -15,14 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonParser;
 import com.robinhood.spark.SparkAdapter;
 import com.robinhood.spark.SparkView;
 
-import org.json.JSONArray;
-
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,7 +24,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.POST;
 
 public class COVIDActivity extends AppCompatActivity {
     private TextView textViewResult;
@@ -42,14 +35,19 @@ public class COVIDActivity extends AppCompatActivity {
     private static final String TAG = "COVIDActivity";
 
     //make array for datas
-    int [] covid_positive;
-    int [] covid_positive_increase;
-    int [] covid_death;
-    int [] covid_death_increase;
-    int [] covid_date;
+    private int[] covid_positive;
+    private int[] covid_positive_increase;
+    private int[] covid_death;
+    private int[] covid_death_increase;
+    private int[] covid_date;
 
-    private String covid_string_positive;
-    private String covid_string_death;
+    //Make reversed array for graph
+    private int[] reversed_covid_positive;
+    private int temp;
+
+    //Adapter for graph
+    private MyAdapter myadapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +58,7 @@ public class COVIDActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent move_main_covid = new Intent(COVIDActivity.this,MainActivity.class);
+                Intent move_main_covid = new Intent(COVIDActivity.this, MainActivity.class);
                 startActivity(move_main_covid);
             }
         });
@@ -94,8 +92,8 @@ public class COVIDActivity extends AppCompatActivity {
                 List<COVID_Post_Data> posts = response.body();
 
                 //Give message if fail, TAG is COVIDActivity so that it will show log in this activity
-                if(posts == null) {
-                    Log.w(TAG,"Did not receive any valid response body");
+                if (posts == null) {
+                    Log.w(TAG, "Did not receive any valid response body");
                     return;
                 }
 
@@ -111,24 +109,25 @@ public class COVIDActivity extends AppCompatActivity {
                  *****************************************************************
                  */
                 //show positive data in us
-                //HAVE TO FIX : this code only can show whole result of positive so that it needs to
+                //HAVE TO FIX (FIXED) : this code only can show whole result of positive so that it needs to
                 //change to get only one data and set to text
                 //get information about whole infection in US
-                covid_positive = new int[300];
-                covid_positive_increase = new int[300];
-                covid_death = new int[300];
-                covid_death_increase = new int[300];
-                covid_date = new int [300];
+
                 int i = 0;
+                covid_positive = new int[posts.size()];
+                covid_positive_increase = new int[posts.size()];
+                covid_date = new int[posts.size()];
+                covid_death = new int[posts.size()];
+                covid_death_increase = new int[posts.size()];
 
                 for (COVID_Post_Data covid_post_data : posts) {
-                    int content1,content2,content3,content4,content5;
+                    int content1, content2, content3, content4, content5;
 
                     //get data to contents
                     content1 = covid_post_data.getPositive();
                     content2 = covid_post_data.getDeath();
-                    content3 =  covid_post_data.getPositiveIncrease();
-                    content4 = covid_post_data.getDeathIncrease() ;
+                    content3 = covid_post_data.getPositiveIncrease();
+                    content4 = covid_post_data.getDeathIncrease();
                     content5 = covid_post_data.getDate();
 
                     //set data to each array
@@ -149,10 +148,40 @@ public class COVIDActivity extends AppCompatActivity {
 
                 }
 
+                /*
+                 *****************************************************************
+                 *Get Spark Graph to show the positive with time sequence        *
+                 *****************************************************************
+                 */
+                //make it reversed
+                for (int j = 0; j < covid_positive.length / 2; j++) {
+                    temp = covid_positive[j];
+                    covid_positive[j] = covid_positive[covid_positive.length - j - 1];
+                    covid_positive[covid_positive.length - j - 1] = temp;
 
+                }
+                //Set to revered covid positive array
+                reversed_covid_positive = covid_positive;
+                scrubInfoTextView = findViewById(R.id.scrub_info_textview);
+                SparkView sparkView = (SparkView) findViewById(R.id.sparkview);
 
+                //create adapter
+                //put
+                myadapter = new MyAdapter(reversed_covid_positive);
+                sparkView.setAdapter(myadapter);
+                sparkView.setScrubEnabled(true);
 
+                sparkView.setScrubListener(new SparkView.OnScrubListener() {
+                    @Override
+                    public void onScrubbed(Object value) {
+                        if (value == null) {
+                            scrubInfoTextView.setText(R.string.scrub_empty);
+                        } else {
+                            scrubInfoTextView.setText(getString(R.string.scrub_format, value));
 
+                        }
+                    }
+                });
             }
 
             @Override
@@ -160,58 +189,39 @@ public class COVIDActivity extends AppCompatActivity {
                 textViewResult.setText(t.getMessage());
             }
 
+
         });
-
-         scrubInfoTextView = findViewById(R.id.scrub_info_textview);
-        SparkView sparkView = (SparkView) findViewById(R.id.sparkview);
-
-        //create adapter
-       /* MyAdapter myadapter = new MyAdapter();
-
-        sparkView.setAdapter(myadapter);*/
-        sparkView.setScrubEnabled(true);
-        sparkView.setScrubListener(new SparkView.OnScrubListener() {
-            @Override
-            public void onScrubbed(Object value) {
-                if (value == null) {
-                    scrubInfoTextView.setText(R.string.scrub_empty);
-                } else {
-                    scrubInfoTextView.setText(getString(R.string.scrub_format, value));
-
-                }
-            }
-        });
-
-
-
-
-
 
 
     }
 
- /*   public static class MyAdapter extends SparkAdapter {
-        private int [] yData = covid_death;
+    //Adapter for Spark Chart
+    public class MyAdapter extends SparkAdapter {
 
-        public MyAdapter() {
-            yData = new int[50];
+        private final int[] yData;
+
+        public MyAdapter(int[] data) {
+            this.yData = data;
 
         }
 
 
         @Override
         public int getCount() {
-            return 0;
+            return yData.length;
         }
 
+        @NonNull
         @Override
         public Object getItem(int index) {
-            return null;
+            return yData[index];
         }
 
         @Override
         public float getY(int index) {
             return yData[index];
         }
-    }*/
+
+
+    }
 }

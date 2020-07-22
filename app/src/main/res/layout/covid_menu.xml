@@ -138,15 +138,20 @@
             android:id="@+id/sparkview"
             android:layout_width="match_parent"
             android:layout_height="360dp"
-
+            app:spark_animateChanges="true"
+            app:spark_lineColor="#000"
+            app:spark_scrubEnabled="true"
             />
 
         <TextView
             android:id="@+id/scrub_info_textview"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:text="here"
-
+            android:text="This graph is daily increase of COVID-19 in US"
+            android:textSize="30sp"
+            android:gravity="center"
             />
     </LinearLayout>
+
+
 </RelativeLayout>

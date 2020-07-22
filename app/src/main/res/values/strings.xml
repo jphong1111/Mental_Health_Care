@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Solian</string>
-    <string name="scrub_format">Scrubbing value: %1$s</string>
+    <string name="scrub_format">Positive value: %1$s</string>
     <string name="scrub_empty">Tap and hold the graph to scrub.</string>
 </resources>
