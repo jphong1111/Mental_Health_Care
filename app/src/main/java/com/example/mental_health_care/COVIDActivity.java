@@ -41,8 +41,12 @@ public class COVIDActivity extends AppCompatActivity {
     private TextView scrubInfoTextView;
     private static final String TAG = "COVIDActivity";
 
-    private int [] covid_death;
-
+    //make array for datas
+    int [] covid_positive;
+    int [] covid_positive_increase;
+    int [] covid_death;
+    int [] covid_death_increase;
+    int [] covid_date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,8 +111,11 @@ public class COVIDActivity extends AppCompatActivity {
                 //HAVE TO FIX : this code only can show whole result of positive so that it needs to
                 //change to get only one data and set to text
                 //get information about whole infection in US
+                covid_positive = new int[300];
+                covid_positive_increase = new int[300];
                 covid_death = new int[300];
-
+                covid_death_increase = new int[300];
+                covid_date = new int [300];
                 int i = 0;
 
                 for (COVID_Post_Data covid_post_data : posts) {
@@ -116,21 +123,25 @@ public class COVIDActivity extends AppCompatActivity {
 
 
                     content1 = covid_post_data.getPositive();
-/*                    content2 = covid_post_data.getDeath() + "\n";
-                    content3 = " (+" + covid_post_data.getPositiveIncrease() + ")\n";
-                    content4 = " (+" + covid_post_data.getDeathIncrease() + ")\n";
-                    content5 = " Updated : " + covid_post_data.getDate() + "\n";*/
-                    /*Try to put formatted date data BUT FAILED
-                    content5 = date.toJson(covid_post_data.getDateChecked());*/
+                    content2 = covid_post_data.getDeath();
+                    content3 =  covid_post_data.getPositiveIncrease();
+                    content4 = covid_post_data.getDeathIncrease() ;
+                    content5 = covid_post_data.getDate();
+
+
                     covid_death[i] = content1;
+                    covid_death_increase[i] = content2;
+                    covid_positive[i] = content3;
+                    covid_positive_increase[i] = content4;
+                    covid_date[i] = content5;
                     i++;
 
                     textViewResult.setText(String.valueOf(covid_death[0]));
-        /*            textViewResult2.append(content2);
-                    textViewResult3.append(content3);
-                    textViewResult4.append(content4);
-                    textViewResult5.append(content5);
-*/
+                    textViewResult2.setText(String.valueOf(covid_death_increase[0]));
+                    textViewResult3.setText(String.valueOf(covid_positive[0]));
+                    textViewResult4.setText(String.valueOf(covid_positive_increase[0]));
+                    textViewResult5.setText(String.valueOf(covid_date[0]));
+
 
                 }
 
@@ -151,9 +162,9 @@ public class COVIDActivity extends AppCompatActivity {
         SparkView sparkView = (SparkView) findViewById(R.id.sparkview);
 
         //create adapter
-        MyAdapter myadapter = new MyAdapter();
+       /* MyAdapter myadapter = new MyAdapter();
 
-        sparkView.setAdapter(myadapter);
+        sparkView.setAdapter(myadapter);*/
         sparkView.setScrubEnabled(true);
         sparkView.setScrubListener(new SparkView.OnScrubListener() {
             @Override
@@ -175,11 +186,11 @@ public class COVIDActivity extends AppCompatActivity {
 
     }
 
-    public static class MyAdapter extends SparkAdapter {
-        private final float[] yData;
+ /*   public static class MyAdapter extends SparkAdapter {
+        private int [] yData = covid_death;
 
         public MyAdapter() {
-            yData = new float[50];
+            yData = new int[50];
 
         }
 
@@ -198,5 +209,5 @@ public class COVIDActivity extends AppCompatActivity {
         public float getY(int index) {
             return yData[index];
         }
-    }
+    }*/
 }
