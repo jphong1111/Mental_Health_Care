@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:background="#adbabf">
 
 
     <TextView
@@ -118,12 +119,14 @@
 
     <ImageButton
         android:id="@+id/covid_to_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:contentDescription="go back"
-        android:src="?attr/homeAsUpIndicator" />
+        android:src="?attr/homeAsUpIndicator"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_margin="5dp"/>
 
     <LinearLayout
 

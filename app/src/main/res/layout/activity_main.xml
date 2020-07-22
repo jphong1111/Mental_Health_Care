@@ -1,142 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#adbabf">
 
-
-    <!--main mental screen is from: https://today.umd.edu/articles/many-opioid-users-mental-illness-lack-treatment-2669d809-160d-4e88-90ee-665844fbe8f8-->
-    <LinearLayout
-        android:id="@+id/linearLayout"
-
-        android:background="#9d596d"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="8dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071">
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="@font/font1"
-            android:gravity="center"
-            android:text="Solian"
-            android:textColor="#141313"
-            android:textSize="50sp"
-
-            />
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:gravity="center"
-            android:textSize="30dp"
-            android:text="Select any menu below to assess whether you like to know about Mental Health Care" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:id="@+id/iv_background"
-            android:src="@drawable/mental_main"
-            android:layout_marginTop="18dp"
-            android:layout_height="200dp" />
-
-
-
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:padding="5dp">
-
-            <TableRow
-                android:layout_width="0dp"
-                android:layout_weight="1"
-
-                >
-
-                <Button
-                    android:id="@+id/button1"
-                    style="@style/Widget.AppCompat.Button.Borderless"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_color"
-                    android:text="Mental Health"
-                    android:textColor="#464e64"
-                    android:textSize="20dp"
-                    />
-
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_color"
-                    android:text="Self-Test"
-                    android:textColor="#464e64"
-
-                    android:textSize="20dp" />
-
-            </TableRow>
-            <TableRow
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                >
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_color"
-                    android:text="Chat"
-                    android:textColor="#464e64"
-                    android:textSize="20dp" />
-
-                <Button
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/button4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/button_color"
-                    android:text="Resource Center"
-                    android:textColor="#464e64"
-                    android:textSize="20dp" />
-            </TableRow>
-        </TableLayout>
-
-    </LinearLayout>
-    <Button
-        android:id="@+id/covid_button"
+    <TextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:textColor="#294754"
+        android:textSize="30sp"
+        android:text="We are here to help you" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/main_logo" />
+
+    <Button
+        android:id="@+id/covid_button"
+        android:layout_width="77dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text1"
+        android:background="?android:attr/selectableItemBackground"
         android:text="COVID-19"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="300dp"
-        />
+        android:textColor="#000000"
+        android:layout_marginTop="95dp"
+        android:layout_marginLeft="190dp"
+
+        android:textSize="15sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true">
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            >
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#6e818a"
+                android:text="Mental Health"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#58717c"
+                android:text="Self-Test"
+                android:textColor="#ffffff"
+
+                android:textSize="20dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="0dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#3c5965"
+                android:text="Chat"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#294754"
+                android:text="Resource Center"
+                android:textColor="#ffffff"
+                android:textSize="20dp" />
+
+
+        </TableRow>
+    </TableLayout>
+
+
 </RelativeLayout>
