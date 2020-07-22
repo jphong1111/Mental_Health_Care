@@ -47,6 +47,9 @@ public class COVIDActivity extends AppCompatActivity {
     int [] covid_death;
     int [] covid_death_increase;
     int [] covid_date;
+
+    private String covid_string_positive;
+    private String covid_string_death;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,14 +124,14 @@ public class COVIDActivity extends AppCompatActivity {
                 for (COVID_Post_Data covid_post_data : posts) {
                     int content1,content2,content3,content4,content5;
 
-
+                    //get data to contents
                     content1 = covid_post_data.getPositive();
                     content2 = covid_post_data.getDeath();
                     content3 =  covid_post_data.getPositiveIncrease();
                     content4 = covid_post_data.getDeathIncrease() ;
                     content5 = covid_post_data.getDate();
 
-
+                    //set data to each array
                     covid_death[i] = content1;
                     covid_death_increase[i] = content2;
                     covid_positive[i] = content3;
@@ -136,6 +139,7 @@ public class COVIDActivity extends AppCompatActivity {
                     covid_date[i] = content5;
                     i++;
 
+                    //use set text to show each data
                     textViewResult.setText(String.valueOf(covid_death[0]));
                     textViewResult2.setText(String.valueOf(covid_death_increase[0]));
                     textViewResult3.setText(String.valueOf(covid_positive[0]));
