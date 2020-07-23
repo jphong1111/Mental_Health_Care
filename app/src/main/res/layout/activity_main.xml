@@ -4,18 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#adbabf">
+    android:background="#d6dcdf">
 
+    <TextView
+        android:id="@+id/text_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Auburn University"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_main"
+        android:text="conducted by SoliU Team"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+/>
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="180dp"
         android:gravity="center_horizontal"
+        android:text="We are here to help you"
         android:textColor="#294754"
-        android:textSize="30sp"
-        android:text="We are here to help you" />
+        android:textSize="25sp" />
 
     <ImageView
         android:layout_width="200dp"
@@ -30,11 +48,11 @@
         android:layout_width="77dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/text1"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="95dp"
         android:background="?android:attr/selectableItemBackground"
         android:text="COVID-19"
         android:textColor="#000000"
-        android:layout_marginTop="95dp"
-        android:layout_marginLeft="190dp"
 
         android:textSize="15sp" />
 

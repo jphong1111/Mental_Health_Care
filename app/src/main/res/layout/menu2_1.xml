@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="#adbabf">
+    android:background="#d6dcdf">
 <TextView
     android:id="@+id/text_view_question_count"
     android:layout_width="wrap_content"
