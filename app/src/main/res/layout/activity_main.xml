@@ -40,7 +40,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="300dp"
         android:layout_alignParentBottom="true">
 
         <TableRow
@@ -51,27 +51,28 @@
 
             <Button
                 android:id="@+id/button1"
-                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="#6e818a"
-                android:text="Mental Health"
-                android:textColor="#ffffff"
+                android:drawableTop="@drawable/learn_icon"
+                android:padding="20dp"
+                android:text="Learn"
+                android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
                 android:layout_weight="1"
                 android:background="#58717c"
-                android:text="Self-Test"
-                android:textColor="#ffffff"
-
+                android:drawableTop="@drawable/self_test"
+                android:padding="20dp"
+                android:text="Self Test"
+                android:textColor="#FFFFFF"
                 android:textSize="20dp" />
-
         </TableRow>
 
         <TableRow
@@ -84,10 +85,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#3c5965"
+                android:drawableTop="@drawable/chat_icon"
+                android:padding="30dp"
                 android:text="Chat"
-                android:textColor="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="20dp" />
-
 
             <Button
                 android:id="@+id/button4"
@@ -95,8 +97,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#294754"
+                android:drawableTop="@drawable/location_icon"
+                android:padding="20dp"
+
                 android:text="Resource Center"
-                android:textColor="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="20dp" />
 
 
