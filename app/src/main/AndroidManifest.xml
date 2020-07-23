@@ -29,13 +29,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
-        <activity android:name=".Menu1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Menu1"> </activity>
         <activity android:name=".Menu1_1"></activity>
         <activity android:name=".Menu1_2"></activity>
         <activity android:name=".Menu1_3"></activity>
