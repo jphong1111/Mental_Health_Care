@@ -12,9 +12,8 @@ public class Menu2_2 extends AppCompatActivity {
 
     private TextView textViewResult;
     private int result_score = 1;
-
-
-
+    Menu2_1 d = new Menu2_1();
+    private int test_score = d.getNum();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +21,7 @@ public class Menu2_2 extends AppCompatActivity {
         setContentView(R.layout.menu2_2);
 
 
-        if(result_score == 1) {
+        if(test_score < 4) {
             showNextResult("Your answers suggest that you have some of the same symptoms common " +
                     "in people suffering from depression. Since this quiz is not meant to replace " +
                     "a professional diagnosis, you should follow up with your doctor or a mental" +

@@ -31,7 +31,8 @@ public class Menu2_1 extends AppCompatActivity {
     private Question currentQuestion;
     private List<Question> questionList;
     private int count = 0;
-    public int num = 0;
+    //for test score
+    public int num;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +142,7 @@ public class Menu2_1 extends AppCompatActivity {
         finish();
     }
 
-
-
+    public int getNum() {
+        return this.num;
+    }
 }
